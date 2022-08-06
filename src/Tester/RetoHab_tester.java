@@ -17,6 +17,39 @@ public class RetoHab_tester {
 
     }
 
+    private static void NPC_tester() {
+
+        ArrayList<Enemigo> t3 = new ArrayList<>();
+        t3.add(new Enemigo("1037543456", "Zombiembobo", "Enemigo", 3, 6, 1, 0, 20, 1, "basic zombie"));
+        t3.add(new Enemigo("1037543457", "Zombimax", "Enemigo", 4, 6, 1.5, 1, 30, 2, "powered zombie"));
+        t3.add(new Enemigo("1037543458", "Zombiembobo", "Enemigo", 3, 7, 1, 0, 20, 1, "basic zombie"));
+        t3.add(new Enemigo("1037543410", "Zombiembobo", "Enemigo", 4, 7, 1, 0, 20, 1, "basic zombie"));
+        t3.add(new Enemigo("1037543459", "Zombisaurio", "Enemigo", 3, 8, 0.5, 5, 89.9, 10, "super powered zombie"));
+        t3.add(new Enemigo("1037543411", "Zombimax", "Enemigo", 4, 8, 1.5, 1, 30, 2, "powered zombie"));
+        t3.add(new Enemigo("1037543412", "Zombiembobo", "Enemigo", 3, 9, 1, 0, 20, 1, "basic zombie"));
+        t3.add(new Enemigo("1037543413", "Zombimax", "Enemigo", 4, 9, 1.5, 1, 30, 2, "powered zombie"));
+
+        Object[] reporteResultado = NPC.Solution.statisticsGame(t3);
+        System.out.println(Arrays.toString(reporteResultado));
+    }
+
+    private static void LibrosDigitales_tester() {
+
+        ArrayList<LibroDigital> biblioteca = new ArrayList<>();
+        biblioteca.add(new LibroDigital(2.4, "DJVU", "Memorias de Adriano", "Margueritte", "Yourcenar", "1950/04/24", 245, 2));
+        biblioteca.add(new LibroDigital(4, "PDF", "Java para Todos", "Joseph", "Whitecastle", "2010/08/02", 202, 5));
+        biblioteca.add(new LibroDigital(2.2, "HTML", "La Iliada", "Homero", "", "1970/04/24", 204, 7));
+        biblioteca.add(new LibroDigital(8, "EPUB", "1984", "George", "Orwell", "1980/11/03", 259, 7));
+        LibroDigital libro5 = new LibroDigital(2.0, "DJVU", "Algebra", "Aurelio", "Baldor", "1941/06/19", 574, 3);
+        for (int i = 0; i < 26; i++) {
+            libro5.prestar();
+        }
+        biblioteca.add(libro5);
+        biblioteca.add(new LibroDigital(3, "PDF", "Mujeres Que Corren Con Los Lobos", "Clarissa", "Pinkola Estés", "1989/05/28", 600, 8));
+        Object[] reporteResultado = LibrosDigitales.Solucion.reporte(biblioteca);
+        System.out.println(Arrays.toString(reporteResultado));
+    }
+
     private static void Trabajadores_tester() {
 
         ArrayList<Trabajador> grupo1 = new ArrayList<>();
@@ -47,40 +80,16 @@ public class RetoHab_tester {
         grupo5.add(new Trabajador("98765234", "Maurice", "Doe", "1986-01-29", "matr@mail.co", "1234567", "frontend dev", 6, 17));
         //Respuesta esperaba: [7.0, 13.0, 21, 98765234, 34.0]
 
-        Object[] reporteResultado = Trabajadores.Solucion.reportes(grupo5);
-        System.out.println(Arrays.toString(reporteResultado));
+        Object[] reporteResultado1 = Trabajadores.Solucion.reportes(grupo1);
+        Object[] reporteResultado2 = Trabajadores.Solucion.reportes(grupo2);
+        Object[] reporteResultado3 = Trabajadores.Solucion.reportes(grupo3);
+        Object[] reporteResultado4 = Trabajadores.Solucion.reportes(grupo4);
+        Object[] reporteResultado5 = Trabajadores.Solucion.reportes(grupo5);
+        System.out.println(Arrays.toString(reporteResultado1));
+        System.out.println(Arrays.toString(reporteResultado2));
+        System.out.println(Arrays.toString(reporteResultado3));
+        System.out.println(Arrays.toString(reporteResultado4));
+        System.out.println(Arrays.toString(reporteResultado5));
     }
 
-    private static void LibrosDigitales_tester() {
-
-        ArrayList<LibroDigital> biblioteca = new ArrayList<>();
-        biblioteca.add(new LibroDigital(2.4, "DJVU", "Memorias de Adriano", "Margueritte", "Yourcenar", "1950/04/24", 245, 2));
-        biblioteca.add(new LibroDigital(4, "PDF", "Java para Todos", "Joseph", "Whitecastle", "2010/08/02", 202, 5));
-        biblioteca.add(new LibroDigital(2.2, "HTML", "La Iliada", "Homero", "", "1970/04/24", 204, 7));
-        biblioteca.add(new LibroDigital(8, "EPUB", "1984", "George", "Orwell", "1980/11/03", 259, 7));
-        LibroDigital libro5 = new LibroDigital(2.0, "DJVU", "Algebra", "Aurelio", "Baldor", "1941/06/19", 574, 3);
-        for (int i = 0; i < 26; i++) {
-            libro5.prestar();
-        }
-        biblioteca.add(libro5);
-        biblioteca.add(new LibroDigital(3, "PDF", "Mujeres Que Corren Con Los Lobos", "Clarissa", "Pinkola Estés", "1989/05/28", 600, 8));
-        Object[] reporteResultado = LibrosDigitales.Solucion.reporte(biblioteca);
-        System.out.println(Arrays.toString(reporteResultado));
-    }
-
-    private static void NPC_tester() {
-
-        ArrayList<Enemigo> t3 = new ArrayList<>();
-        t3.add(new Enemigo("1037543456", "Zombiembobo", "Enemigo", 3, 6, 1, 0, 20, 1, "basic zombie"));
-        t3.add(new Enemigo("1037543457", "Zombimax", "Enemigo", 4, 6, 1.5, 1, 30, 2, "powered zombie"));
-        t3.add(new Enemigo("1037543458", "Zombiembobo", "Enemigo", 3, 7, 1, 0, 20, 1, "basic zombie"));
-        t3.add(new Enemigo("1037543410", "Zombiembobo", "Enemigo", 4, 7, 1, 0, 20, 1, "basic zombie"));
-        t3.add(new Enemigo("1037543459", "Zombisaurio", "Enemigo", 3, 8, 0.5, 5, 89.9, 10, "super powered zombie"));
-        t3.add(new Enemigo("1037543411", "Zombimax", "Enemigo", 4, 8, 1.5, 1, 30, 2, "powered zombie"));
-        t3.add(new Enemigo("1037543412", "Zombiembobo", "Enemigo", 3, 9, 1, 0, 20, 1, "basic zombie"));
-        t3.add(new Enemigo("1037543413", "Zombimax", "Enemigo", 4, 9, 1.5, 1, 30, 2, "powered zombie"));
-
-        Object[] reporteResultado = NPC.Solution.statisticsGame(t3);
-        System.out.println(Arrays.toString(reporteResultado));
-    }
 }

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 public class Solucion {
 
     public static Object[] reporte(ArrayList<LibroDigital> library){
-        //EN ESTE ESPACIO PONER SU LÓGICA
 
     String libroMasGrande = "", libroMenosPrestado = "", libroMayorTransferencia = "";
     int paginasLibroMasGrande = Integer.MIN_VALUE, cantPrestLibroMenosPrestado = Integer.MAX_VALUE;
