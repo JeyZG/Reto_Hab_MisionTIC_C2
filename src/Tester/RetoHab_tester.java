@@ -54,7 +54,8 @@ public class RetoHab_tester {
 
         ArrayList<Trabajador> grupo1 = new ArrayList<>();
         grupo1.add(new Trabajador("1037543456", "Mateo", "Rivera", "1992-08-11", "matr@mail.co", "1234567", "frontend dev", 50, 4));
-        //Respuesta esperaba: [50.0, 4.0, 50, 1037543456, 29.0]
+        //Respuesta esperaba: [50.0, 4.0, 50, 1037543456, 29.0] // Hasta el 10 de Agosto
+        //Respuesta esperaba: [50.0, 4.0, 50, 1037543456, 30.0] // Desde el 11 de Agosto
 
         ArrayList<Trabajador> grupo2 = new ArrayList<>();
         grupo2.add(new Trabajador("32675123", "Luz", "Di", "1966-01-04", "matr@mail.co", "1234567", "frontend dev", 10, 7));
@@ -65,30 +66,38 @@ public class RetoHab_tester {
         grupo3.add(new Trabajador("10367876345", "Valeria", "Di", "1971-07-25", "matr@mail.co", "1234567", "frontend dev", 8, 8));
         grupo3.add(new Trabajador("1037645345", "Johan", "Doe", "1971-08-06", "matr@mail.co", "1234567", "frontend dev", 9, 17));
         grupo3.add(new Trabajador("98765234", "Maurice", "Doe", "1992-08-11", "matr@mail.co", "1234567", "frontend dev", 2, 19));
-        //Respuesta esperaba: [6.0, 14.666666666666666, 19, 98765234, 43.333333333333336]
+        //Respuesta esperaba: [6.0, 14.666666666666666, 19, 98765234, 43.333333333333336] // Hasta el 5 de Agosto (51 + 50 + 29) / 3
+        //Respuesta esperaba: [6.0, 14.666666666666666, 19, 98765234, 43.666666666666664] // Entre el 6 y 10 de Agosto (51 + 51 + 29) / 3
+        //Respuesta esperaba: [6.0, 14.666666666666666, 19, 98765234, 44.0] // Despues del 11 de Agosto (51 + 51 + 30) / 3
 
         ArrayList<Trabajador> grupo4 = new ArrayList<>();
         grupo4.add(new Trabajador("10367876345", "Valeria", "Di", "1992-08-11", "matr@mail.co", "1234567", "frontend dev", 8, 7));
         grupo4.add(new Trabajador("1037645345", "Johan", "Doe", "1972-07-25", "matr@mail.co", "1234567", "frontend dev", 7, 15));
         grupo4.add(new Trabajador("98765234", "Maurice", "Doe", "1975-01-15", "matr@mail.co", "1234567", "frontend dev", 6, 17));
         grupo4.add(new Trabajador("1036789453", "Matthew", "Doe", "1976-11-16", "matr@mail.co", "1234567", "frontend dev", 2, 14));
-        //Respuesta esperaba: [5.0, 13.25, 23, 98765234, 42.75]
+        //Respuesta esperaba: [5.0, 13.25, 23, 98765234, 42.75] // Hasta el 10 de Agosto (29 + 50 + 47 + 45) / 4
+        //Respuesta esperaba: [5.0, 13.25, 23, 98765234, 43.0] // Desde el 11 de Agosto (30 + 50 + 47 + 45) / 4
 
         ArrayList<Trabajador> grupo5 = new ArrayList<>();
         grupo5.add(new Trabajador("10367876345", "Valeria", "Di", "1984-12-09", "matr@mail.co", "1234567", "frontend dev", 8, 7));
         grupo5.add(new Trabajador("1037645345", "Johan", "Doe", "1992-08-11", "matr@mail.co", "1234567", "frontend dev", 7, 15));
         grupo5.add(new Trabajador("98765234", "Maurice", "Doe", "1986-01-29", "matr@mail.co", "1234567", "frontend dev", 6, 17));
-        //Respuesta esperaba: [7.0, 13.0, 21, 98765234, 34.0]
+        //Respuesta esperaba: [7.0, 13.0, 21, 98765234, 34.0] // Hasta el 10 de Agosto (37 + 29 + 36) / 3
+        //Respuesta esperaba: [7.0, 13.0, 21, 98765234, 34.333333333333333] // Desde el 11 de Agosto (37 + 30 + 36) / 3
 
         Object[] reporteResultado1 = Trabajadores.Solucion.reportes(grupo1);
-        Object[] reporteResultado2 = Trabajadores.Solucion.reportes(grupo2);
-        Object[] reporteResultado3 = Trabajadores.Solucion.reportes(grupo3);
-        Object[] reporteResultado4 = Trabajadores.Solucion.reportes(grupo4);
-        Object[] reporteResultado5 = Trabajadores.Solucion.reportes(grupo5);
         System.out.println(Arrays.toString(reporteResultado1));
+
+        Object[] reporteResultado2 = Trabajadores.Solucion.reportes(grupo2);
         System.out.println(Arrays.toString(reporteResultado2));
+
+        Object[] reporteResultado3 = Trabajadores.Solucion.reportes(grupo3);
         System.out.println(Arrays.toString(reporteResultado3));
+
+        Object[] reporteResultado4 = Trabajadores.Solucion.reportes(grupo4);
         System.out.println(Arrays.toString(reporteResultado4));
+
+        Object[] reporteResultado5 = Trabajadores.Solucion.reportes(grupo5);
         System.out.println(Arrays.toString(reporteResultado5));
     }
 

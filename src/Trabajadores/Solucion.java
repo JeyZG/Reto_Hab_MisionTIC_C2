@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Solucion {
     public static Object[] reportes(ArrayList<Trabajador> trabajadores) {
 
-        double promSalarios = 0.0, promHorasMes = 0.0, promEdades = 0.0;
+        double promSalarios, promHorasMes, promEdades;
         int sumaSalarios = 0, sumaHorasMes = 0, sumaEdades = 0;
         String trabajadorMayorHoras = "";
         int mayorCantidadHoras = Integer.MIN_VALUE;
@@ -31,7 +31,7 @@ public class Solucion {
 
         // Calculamos el promedio de salarios
         promSalarios = sumaSalarios / trabajadores.size();
-        // TODO: Si hay error en VPL hacer casting a double
+        // TODO: Si hay error en VPL hacer casting a double a sumaSalarios
 
         // Calculamos el promedio de horas trabajadas
         promHorasMes = (double) sumaHorasMes / trabajadores.size();
